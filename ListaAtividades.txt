@@ -1,0 +1,6 @@
+1- Colocar Token, TokenVerify e LinkGrauth em um json. Chamar o json ou arquivo unico e por isso em variaveis.
+2- Melhorar funcao noticia
+3- Implementar funcao -h (como se fosse um help) 
+4- teste-json "json"
+	- Recebe um json
+	- no lugar de id vai ter uma variavel(sender) e o programa deve retornar o mesmo json no formato payload :)

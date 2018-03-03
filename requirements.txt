@@ -1,0 +1,6 @@
+Flask==0.12.2
+Flask-MQTT==0.0.11
+gunicorn
+beautifulsoup4
+requests
+lxml

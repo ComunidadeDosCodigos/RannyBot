@@ -1,2 +1,2 @@
-# RannyBot
-Repositorio para colocar os códigos do RannyBot. Sendo este aqui o código de produção.
+# Rannybot
+Chatbot elaborado junto com a Comunidade dos Codigos
