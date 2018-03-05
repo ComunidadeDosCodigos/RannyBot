@@ -22,7 +22,7 @@ from games import funcGames
 app = Flask(__name__)
 
 #Funcionalidades MQTT
-app.config['MQTT_REFRESH_TIME'] = 1.0  
+app.config['MQTT_REFRESH_TIME'] = 1.0
 app.config['TEMPLATES_AUTO_RELOAD'] = True
 app.config['MQTT_BROKER_URL'] = 'm12.cloudmqtt.com'
 app.config['MQTT_BROKER_PORT'] = 16903
@@ -50,7 +50,7 @@ noticias = ['noticia','news','noticias']
 aleatorio = ['aleatorio', 'randomico']
 teste = ['teste', 'try']
 ajuda = ['ajuda', 'socorro', 'help', 'socoro']
-meuid = ['meuid']
+meuid = ['meuid', 'myid' 'meu id', 'my id']
 wiki = ['wikipedia', 'wiki']
 cryptocoin = ['crypto', 'cryptocoin', 'cryptomoeda']
 games = ['jogos', 'games', 'Lançamentos do ano', 'Lançamento de Games']
@@ -96,19 +96,19 @@ def webhook():
             #Variaveis
             '''
             #text = MENSAGEM QUE CHEGA PARA O FACEBOOK
-            #msg = text tratado. 
+            #msg = text tratado.
             #sender = quem enviou a msg.
             '''
             sender = data['entry'][0]['messaging'][0]['sender']['id'] # id do mensageiro
 
-            if msg in entrada: 
+            if msg in entrada:
                 retorno = 'Olá, tudo bem? Em que posso lhe ajudar, Você já conhece minhas funções? :)'#Mensagem de retorno ao usuario
                 payloadTextoSimples(sender,retorno)
                 funcFuncao(sender)
 
             elif msg in listafuncao:
                 funcFuncao(sender)
-               
+
             elif msg in sentimentos:
                 retorno = 'Estou muito Bem :) Obrigado.'
                 payloadTextoSimples(sender,retorno)
@@ -150,7 +150,7 @@ def webhook():
                     retorno='Isso não faz parte da minha função.'
                     payloadTextoSimples(sender,retorno)
                     funcFuncao(sender)
-            
+
         except Exception as e:
            print(traceback.format_exc())
 
