@@ -5,18 +5,18 @@ import json
 #Pega token.json e poe na variavel dataJson
 dataJson = json.load(open('token.json'))
 
-#Quando for fazer mudanca apenas mudar no json homologacao e aqui o amb para o de baixo :) 
+#Quando for fazer mudanca apenas mudar no json homologacao e aqui o amb para o de baixo :)
 amb = dataJson['ambiente_ativo']
 token = dataJson['ambiente'][amb]['token']
 tokenVerify = dataJson['tokenVerify']
 linkGrafh = dataJson['linkGrafh']
 
 def payloadTextoSimples(sender,retorno = ""):
-    payload = {'recipient': {'id': sender}, 'message': {'text': retorno}} 
+    payload = {'recipient': {'id': sender}, 'message': {'text': retorno}}
     r = requests.post(linkGrafh + token, json=payload)
 
 def payloadLocalizacao(sender):
-    payload =  { 
+    payload =  {
         "recipient": {
             "id": sender
         },
@@ -119,13 +119,13 @@ def testepayload(sender):
                 "type":"postback",
                 "title":"Start Chatting",
                 "payload":"DEVELOPER_DEFINED_PAYLOAD"
-              }              
-            ]      
+              }
+            ]
           }
         ]
       }
     }
   }
 }
-
-	r = requests.post(linkGrafh + token, json=payloadEnv)
+    payloadsaida = json.dumps(payloadEnv)
+	r = requests.post(linkGrafh + token, json=payloadsaida)
