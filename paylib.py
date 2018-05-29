@@ -120,12 +120,12 @@ def testepayload(sender):
                 "title":"Start Chatting",
                 "payload":"DEVELOPER_DEFINED_PAYLOAD"
               }
+              ]
+              }
             ]
           }
-        ]
+        }
       }
     }
-  }
-}
-    payloadsaida = json.dumps(payloadEnv)
+	payloadsaida = json.dumps(payloadEnv)
 	r = requests.post(linkGrafh + token, json=payloadsaida)
